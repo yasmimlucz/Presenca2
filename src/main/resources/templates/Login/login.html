@@ -22,23 +22,25 @@
 <body>
 <div class="container">
     <h1 class="text-center">Mundo SENAI</h1>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="sp_user"><i class="fa-solid fa-user"></i></span>
-        <input type="text" class="form-control" placeholder="Usuário" aria-label="Username" aria-describedby="sp_user">
-    </div>
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="sp_password"><i class="fa-solid fa-key"></i></span>
-        <input type="password" class="form-control" placeholder="Senha" aria-label="Password"
-               aria-describedby="sp_password">
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <span class="btn btn-primary">Login</span>
+    <form action="/" method="post">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="sp_user"><i class="fa-solid fa-user"></i></span>
+            <input id="usuario" name="usuario" type="text" class="form-control" placeholder="Usuário" aria-label="Username" aria-describedby="sp_user"/>
         </div>
-        <div class="col-sm-6 text-right">
-            <span class="btn btn-dark">Cadastre-se</span>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="sp_password"><i class="fa-solid fa-key"></i></span>
+            <input id="senha" name="senha" type="password" class="form-control" placeholder="Senha" aria-label="Password"
+                   aria-describedby="sp_password">
         </div>
-    </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <input value="Login" type="submit" class="btn btn-primary"/>
+            </div>
+            <div class="col-sm-6 text-right">
+                <span class="btn btn-dark">Cadastre-se</span>
+            </div>
+        </div>
+    </form>
 </div>
 </body>
 </html>
