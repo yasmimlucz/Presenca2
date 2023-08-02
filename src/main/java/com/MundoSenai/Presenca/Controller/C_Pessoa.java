@@ -19,7 +19,23 @@ public class C_Pessoa {
         if(S_Pessoa.getPessoaLogin(usuario,senha) == null){
             return "Login/login";
         }else{
-            return "teste";
+            return "Home/home";
         }
+    }
+
+    @GetMapping("/cadastro")
+    public String getCadastro(){
+        return "Pessoa/cadastro";
+    }
+
+    @PostMapping("/cadastro")
+    public String postCadastro(@RequestParam("nome") String nome,
+                               @RequestParam("email") String email,
+                               @RequestParam("cpf") String cpf,
+                               @RequestParam("telefone") String telefone,
+                               @RequestParam("data_nasc") String data_nascimento,
+                               @RequestParam("senha") String senha,
+                               @RequestParam("confsenha") String conf_senha){
+        return "redirect:/";
     }
 }
