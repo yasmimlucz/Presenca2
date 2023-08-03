@@ -9,22 +9,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class C_Pessoa {
     @GetMapping("/")
-    public String helloWorld(){
+    public String helloWorld() {
         return "Login/login";
     }
 
     @PostMapping("/")
     public String postLogin(@RequestParam("usuario") String usuario,
-                            @RequestParam("senha") String senha){
-        if(S_Pessoa.getPessoaLogin(usuario,senha) == null){
+                            @RequestParam("senha") String senha) {
+        if (S_Pessoa.getPessoaLogin(usuario, senha) == null) {
             return "Login/login";
-        }else{
+        } else {
             return "Home/home";
         }
     }
 
     @GetMapping("/cadastro")
-    public String getCadastro(){
+    public String getCadastro() {
         return "Pessoa/cadastro";
     }
 
@@ -33,9 +33,11 @@ public class C_Pessoa {
                                @RequestParam("email") String email,
                                @RequestParam("cpf") String cpf,
                                @RequestParam("telefone") String telefone,
-                               @RequestParam("data_nasc") String data_nascimento,
+                               @RequestParam("data_nasc") String data_nasc,
                                @RequestParam("senha") String senha,
-                               @RequestParam("confsenha") String conf_senha){
+                               @RequestParam("confsenha") String confsenha) {
+
+        S_Pessoa.cadastrarPessoas(nome, email, cpf, telefone, data_nasc, senha, confsenha);
         return "redirect:/";
     }
 }
